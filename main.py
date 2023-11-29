@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import io
 import matplotlib.pyplot as plt
+import seaborn as sns
 #add header
 st.title('Data Visualization')
 #upload data
@@ -28,3 +29,8 @@ if data_file is not None:
     plt.xlabel(col)
     plt.ylabel('Quality')
     st.pyplot(fig)
+
+    st.header('Show correlation between varibles')
+    fig, ax = plt.subplots()
+    sns.headmap(df.corr(method = 'pearson'),ax =ax,vmax =1,square = True,annot=True,cmap='Blue')
+    st.write(fig)

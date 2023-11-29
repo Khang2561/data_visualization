@@ -2,7 +2,7 @@
 import streamlit as st
 import pandas as pd
 import io
-from matplotlib import pyplot as plt
+import matplotlib.pyplot as plt
 #add header
 st.title('Data Visualization')
 #upload data
@@ -27,4 +27,4 @@ if data_file is not None:
     ax.hist(df[col],bins = 20)
     plt.xlabel(col)
     plt.ylabel('Quality')
-    plt.show()
+    plt.pyplot(fig)

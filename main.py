@@ -34,7 +34,7 @@ if data_file is not None:
   sns.heatmap(df.corr(method = 'pearson'),ax =ax,vmax =1,square = True,annot=True,cmap='Reds')
   st.write(fig)
 
-  output = st.rario('Choose a dependent variable', df.columns)
+  output = st.radio('Choose a dependent variable', df.columns)
   st.header('Show relationship between cariables')
   for col in list(df.columns):
     if col!=output:

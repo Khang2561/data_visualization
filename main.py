@@ -33,3 +33,12 @@ if data_file is not None:
   fig, ax = plt.subplots()
   sns.heatmap(df.corr(method = 'pearson'),ax =ax,vmax =1,square = True,annot=True,cmap='Reds')
   st.write(fig)
+
+  output = st.rario('Choose a dependent variable', df.columns)
+  st.header('Show relationship between cariables')
+  for col in list(df.columns):
+    fig,ax=plt.subplots()
+    ax.scatter(x=df[col],y=df[output])
+    plt.xlabel(col)
+    plt.ylabel(output)
+    st.pyplot(fig)

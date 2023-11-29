@@ -23,7 +23,7 @@ if data_file is not None:
   #Visualize each attribute
   st.header('Visualize each attribute')
   for col in list(df.columns):
-    fix, ax = plt.subplots()
+    fig, ax = plt.subplots()
     ax.hist(df[col],bins = 20)
     plt.xlabel(col)
     plt.ylabel('Quality')

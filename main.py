@@ -29,7 +29,6 @@ if data_file is not None:
     plt.xlabel(col)
     plt.ylabel('Quality')
     st.pyplot(fig)
-
   st.header('Show correlation between varibles')
   fig, ax = plt.subplots()
   sns.heatmap(df.corr(method = 'pearson'),ax =ax,vmax =1,square = True,annot=True,cmap='Reds')

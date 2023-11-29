@@ -27,4 +27,4 @@ if data_file is not None:
     ax.hist(df[col],bins = 20)
     plt.xlabel(col)
     plt.ylabel('Quality')
-    plt.pyplot(fig)
+    st.pyplot(fig)

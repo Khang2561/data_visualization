@@ -37,8 +37,9 @@ if data_file is not None:
   output = st.rario('Choose a dependent variable', df.columns)
   st.header('Show relationship between cariables')
   for col in list(df.columns):
-    fig,ax=plt.subplots()
-    ax.scatter(x=df[col],y=df[output])
-    plt.xlabel(col)
-    plt.ylabel(output)
-    st.pyplot(fig)
+    if col!=output:
+      fig,ax=plt.subplots()
+      ax.scatter(x=df[col],y=df[output])
+      plt.xlabel(col)
+      plt.ylabel(output)
+      st.pyplot(fig)
